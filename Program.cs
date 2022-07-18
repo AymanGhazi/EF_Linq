@@ -3,47 +3,62 @@ using Practice;
 
 internal class Program
 {
+
     private static void Main(string[] args)
     {
+        #region  Fluent Syntax
+        //Linq Queries against any Sequence 
+        //Sequence : class or struct impliments IEnumerable<T> Interface
+        //Local Sequence : in the same stack or Heap -- OBJECT --L2ADO L2XML
+        //Remote Sequence : L2SQL L2E
+        //Sequnce contains Elements
+        List<int> Lst = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        // Input : Sequence  output: the same Sequence 
+        List<string> nameList = new List<string>() { "Ayman", "Elsam", "Ahmed", "Lina" };
+        //static Function
+        var result = Enumerable.Where(Lst, i => i % 2 == 0);
+        // Input : Sequence  output: Single Value
+        var result2 = Enumerable.SingleOrDefault(Lst, i => i == 1);
 
-        // Console.WriteLine("Hello, World!");
-        // int y = 12345;
-        // int i = Int32Extensions.Mirror(y);
-        // System.Console.WriteLine(i);
-
-        List<int> list = new List<int>() { 1, 2, 3, 4, 5, 6, 8, 7, 8 };
+        // Input : No input  output: Sequence  ==> Generation Operators
+        // range , empty , repeat
 
 
-        Employee E1 = new Employee() { ID = 1, Name = "Ayman", Salary = 1300 };
-        Employee E2 = new Employee() { ID = 1, Name = "Ayman", Salary = 1300 };
+        //ExtensionMethod
+        var R = Lst.Where(i => i % 2 == 0);
+        #endregion
 
-        // System.Console.WriteLine(E1.GetType().Name);
-        // System.Console.WriteLine(E1); //To String 
+        #region Query Syntax (Expression) SQLLike
+        //from is syntax suger
+        //for thw 40+ LINQ Operators there are corressponding SQL expressions  (12)
+        //start whith from then introduce range variable represent each and every element in the input sequence
+        //must end with select or Group by (transformation operator)
+        var RR = from i in Lst
+                 where i % 2 == 0
+                 orderby i descending
+                 select i;
 
-        System.Console.WriteLine("*****************************");
-        if (E1.Equals(E2))
+        // Most of LINQ , Deffered Execution ==> Every time you want the result (Enumeration or query) it makes query 
+        //result is whereListIterator (Decorator) ==> 1. Reference to the List  2.the query Itself
+        Lst.Remove(2);
+        Lst.AddRange(new int[] { 10, 11, 12, 13, 14 });
+
+        foreach (var item in Lst)
         {
-            // System.Console.WriteLine("Value EQuals Q1");
+            System.Console.WriteLine(item);
         }
-        var AnnoyE3 = new { ID = 1, Name = "Ayman", Salary = 1300 };
-        var AnnoyE4 = new { ID = 1, Name = "Ayman", Salary = 1300M, NickName = "Aymoon" };
-        // 1- the same DT as Long As it us the same Datatype and Sequence.
-        //var AnnoyE5 = new { ID = 1, Salary = 1300M, NickName = "Aymoon", Name = "Ayman" };
-        // System.Console.WriteLine(AnnoyE5.Equals(AnnoyE4)); false
-        // 2- AnnoyE4.Name = "Samir"; //Error
 
-        //System.Console.WriteLine(AnnoyE4.GetType().name);
-        // System.Console.WriteLine(AnnoyE4);
+        // Deffered Execution is not used when we cast or use single operator the initial result  (Immediate Execusion)
+        var DD = Enumerable.Where(Lst, i => i % 2 == 0).ToList();
+        var DD2 = Enumerable.SingleOrDefault(Lst, i => i == 2);
 
 
-    }
-    //class Tuple
-    public static (int ID, string Name) myFunc()
-    {
-        //Tuple
-        var E = (1, "Hello");
-        (int ID, string Name) F = (1, "Hello");
-        return F;
+
+        #endregion
+
+
+
+
     }
 
 

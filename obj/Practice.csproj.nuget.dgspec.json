@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj": {}
+    "D:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj": {}
   },
   "projects": {
-    "d:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj": {
+    "D:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj",
+        "projectUniqueName": "D:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj",
         "projectName": "Practice",
-        "projectPath": "d:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj",
+        "projectPath": "D:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\Practice.csproj",
         "packagesPath": "C:\\Users\\ayman\\.nuget\\packages\\",
-        "outputPath": "d:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\obj\\",
+        "outputPath": "D:\\Programming Courses\\ItI 9 Month`s material\\ITI\\.NET\\2. LINQ\\Practice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ayman\\AppData\\Roaming\\NuGet\\NuGet.Config"
